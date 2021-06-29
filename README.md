@@ -1,6 +1,6 @@
 # Applocker
 
-Applocker Configuration
+Full details of the script and how it works can be found at https://www.tenaka.net/applockergpo
 
 Applocker is going to be put through it's paces with various attacks and mitigations. To this end the configuration will be consistent for the various tests with more or less out of the box policy, approving everything currently installed. Any program not whitelisted is implicitly denied. This page will describe how Applocker is configured. There will be no Deny rules unless stated.
 
