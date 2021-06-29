@@ -1,0 +1,501 @@
+<AppLockerPolicy Version="1">
+  <RuleCollection Type="Appx" EnforcementMode="NotConfigured" />
+  <RuleCollection Type="Dll" EnforcementMode="NotConfigured">
+    <FilePathRule Id="057f99cf-102d-4f51-86ab-9f4a2e0648d3" Name="%SYSTEM32%\LogFiles\WMI\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%SYSTEM32%\LogFiles\WMI\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="0f30df14-fcad-4cfc-8565-ba50afbdf77a" Name="%SYSTEM32%\Tasks\Microsoft\Windows\PLA\System\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%SYSTEM32%\Tasks\Microsoft\Windows\PLA\System\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="10135555-21e9-4e86-be52-f7ca2c7f142a" Name="%WINDIR%\PLA\Reports\en-US\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%WINDIR%\PLA\Reports\en-US\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="1ae9dbe1-b68c-48b8-a8bd-8cae33003498" Name="%SYSTEM32%\FxsTmp\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%SYSTEM32%\FxsTmp\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="2abc6c3c-719c-46e6-b97d-0af988afdc44" Name="%WINDIR%\PLA\Reports\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%WINDIR%\PLA\Reports\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="2d45af25-f8ce-43f4-bd16-23251fe71101" Name="%SYSTEM32%\spool\drivers\color\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%SYSTEM32%\spool\drivers\color\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="35adc599-ea01-4512-b9b9-4ee855c9e1b2" Name="%WINDIR%\Tasks\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%WINDIR%\Tasks\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="3cb31109-0ee6-45d6-a7dd-591bf89c036b" Name="%WINDIR%\PLA\Rules\en-US\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%WINDIR%\PLA\Rules\en-US\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="3e803c23-2e66-4910-b751-67abce1c407a" Name="%PROGRAMFILES%\*" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="%PROGRAMFILES%\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="532c4a2a-988e-42fe-8cfa-6ce6eff21aa7" Name="%WINDIR%\Temp\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%WINDIR%\Temp\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="5b17e1e0-4fbc-49bc-b092-44ce8ac6036c" Name="%SYSTEM32%\Tasks\Microsoft\Windows\PLA\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%SYSTEM32%\Tasks\Microsoft\Windows\PLA\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="7ba74e95-98b8-4ac6-ab76-e52ddd770ade" Name="%SYSTEM32%\Tasks\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%SYSTEM32%\Tasks\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="7ce365fe-94b3-4c2f-a92b-6568ead5b3cd" Name="%SYSTEM32%\spool\PRINTERS\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%SYSTEM32%\spool\PRINTERS\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="7eb63eda-bda4-417c-b365-0468771d2492" Name="%OSDRIVE%\ProgramData\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%OSDRIVE%\ProgramData\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="91f1bb06-95dd-41a0-ade8-abdb4da1a693" Name="%SYSTEM32%\Microsoft\Crypto\RSA\MachineKeys\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%SYSTEM32%\Microsoft\Crypto\RSA\MachineKeys\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="9e760e3c-127d-4f7a-9a10-f19f27402e12" Name="%SYSTEM32%\Tasks\Microsoft\Windows\RemoteApp and Desktop Connections Update\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%SYSTEM32%\Tasks\Microsoft\Windows\RemoteApp and Desktop Connections Update\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="9fec171c-ad2b-49fe-9efa-9f8582a49c97" Name="%WINDIR%\PLA\Rules\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%WINDIR%\PLA\Rules\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="a29e700e-f1c9-4b80-816a-c5028db224d4" Name="G:\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="G:\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="b0ed48de-3583-4a02-8769-28d75fc63bd9" Name="%SYSTEM32%\spool\SERVERS\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%SYSTEM32%\spool\SERVERS\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="b6bc09b3-1c0d-4d46-89e1-8f0265c1a49f" Name="%WINDIR%\Registration\CRMLog\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%WINDIR%\Registration\CRMLog\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="bce21b67-322b-4e1a-b4d7-7904531947ff" Name="%WINDIR%\tracing\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%WINDIR%\tracing\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="c033cd8c-4b7c-47cb-b976-9cb10fad775f" Name="%SYSTEM32%\Com\dmp\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%SYSTEM32%\Com\dmp\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="c31af71f-6a10-4977-a911-eaa4e9afad53" Name="%WINDIR%\PLA\Templates\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%WINDIR%\PLA\Templates\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="e408d446-8582-4081-8aa7-d5e26ee760a3" Name="H:\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="H:\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="f42bd161-f9fd-4e1c-9635-c67160e7a755" Name="%WINDIR%\*" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="%WINDIR%\*" />
+      </Conditions>
+    </FilePathRule>
+  </RuleCollection>
+  <RuleCollection Type="Exe" EnforcementMode="NotConfigured">
+    <FilePathRule Id="06d278ff-9f13-44da-8da4-2d6df445183d" Name="%OSDRIVE%\ProgramData\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%OSDRIVE%\ProgramData\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="0f3866f3-a817-413f-bb00-e38e7ebf5acd" Name="%SYSTEM32%\LogFiles\WMI\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%SYSTEM32%\LogFiles\WMI\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="2178e1e6-7233-43dd-8cc0-a78c3bd7ed2a" Name="%WINDIR%\Registration\CRMLog\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%WINDIR%\Registration\CRMLog\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="4082f25f-764c-42dc-9471-82eb0481c1a1" Name="%SYSTEM32%\spool\drivers\color\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%SYSTEM32%\spool\drivers\color\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="4aaa3746-968b-416d-be84-1e2c49e832d0" Name="%SYSTEM32%\Microsoft\Crypto\RSA\MachineKeys\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%SYSTEM32%\Microsoft\Crypto\RSA\MachineKeys\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="4fdac073-3aeb-48de-9cf6-221362b1b495" Name="%OSDRIVE%\Users\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%OSDRIVE%\Users\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="543b74c4-d86b-467c-ac26-ae8fa75d7bcb" Name="%WINDIR%\PLA\Rules\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%WINDIR%\PLA\Rules\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="65c05112-e823-44c1-a62c-e39ea3e2df07" Name="%SYSTEM32%\Com\dmp\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%SYSTEM32%\Com\dmp\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="689a61b9-05fc-4e24-8b68-d5a4a5778258" Name="%SYSTEM32%\Tasks\Microsoft\Windows\PLA\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%SYSTEM32%\Tasks\Microsoft\Windows\PLA\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="6e63a91f-1cf2-4d0a-ace8-290c429b0135" Name="%SYSTEM32%\Tasks\Microsoft\Windows\RemoteApp and Desktop Connections Update\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%SYSTEM32%\Tasks\Microsoft\Windows\RemoteApp and Desktop Connections Update\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="743cc301-d6ad-436c-b7d7-9ba894e0a3a3" Name="%WINDIR%\Temp\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%WINDIR%\Temp\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="7cce7df9-eb67-4e1e-9c2d-9c52964c1ddd" Name="%WINDIR%\tracing\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%WINDIR%\tracing\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="80b96929-d177-4982-afad-f05ed8d95393" Name="%OSDRIVE%\ProgramData\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%OSDRIVE%\ProgramData\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="8af28f42-f72f-4931-b869-aec00d13a0d5" Name="G:\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="G:\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="96d9c4e2-e1ea-4a30-a43f-260650357a58" Name="%SYSTEM32%\spool\SERVERS\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%SYSTEM32%\spool\SERVERS\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="99d971c9-ae42-46bf-9a7e-261d800538f0" Name="H:\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="H:\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="a2256a1c-9f7f-4490-8b53-33604f450813" Name="%SYSTEM32%\FxsTmp\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%SYSTEM32%\FxsTmp\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="a51e4a07-3ef2-4d52-b33f-6d5e39758fe6" Name="%WINDIR%\PLA\Rules\en-US\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%WINDIR%\PLA\Rules\en-US\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="a89da2cc-3ebb-4e07-8e5a-986b1ba4d64e" Name="%SYSTEM32%\Tasks\Microsoft\Windows\PLA\System\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%SYSTEM32%\Tasks\Microsoft\Windows\PLA\System\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="a8aa3f26-931d-4bce-9cc7-fedad5c61ec2" Name="%SYSTEM32%\spool\PRINTERS\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%SYSTEM32%\spool\PRINTERS\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="af181098-64c6-4ea9-bb6d-aec8fe93a0d8" Name="%WINDIR%\PLA\Reports\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%WINDIR%\PLA\Reports\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="d8e347a8-6ee5-42e3-ba62-4ad6bdfe809a" Name="%SYSTEM32%\Tasks\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%SYSTEM32%\Tasks\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="e2548a95-a519-4b08-ab1b-952ac82a7489" Name="%WINDIR%\Tasks\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%WINDIR%\Tasks\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="e2d56c55-6ae0-4430-83d1-3cd11d42d3d4" Name="%WINDIR%\PLA\Templates\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%WINDIR%\PLA\Templates\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="f48574c5-db28-46f4-93e7-31cf0611d6d8" Name="%WINDIR%\PLA\Reports\en-US\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%WINDIR%\PLA\Reports\en-US\*" />
+      </Conditions>
+    </FilePathRule>
+  </RuleCollection>
+  <RuleCollection Type="Msi" EnforcementMode="NotConfigured">
+    <FilePathRule Id="054fb924-324d-4bce-9559-e64fd46db479" Name="%OSDRIVE%\ProgramData\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%OSDRIVE%\ProgramData\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="0b971e4e-86ff-47f7-af73-950e6c0982d3" Name="%SYSTEM32%\Tasks\Microsoft\Windows\PLA\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%SYSTEM32%\Tasks\Microsoft\Windows\PLA\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="1045b8db-b970-4f45-b2f2-3f095f3284a7" Name="%SYSTEM32%\spool\drivers\color\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%SYSTEM32%\spool\drivers\color\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="123c1eac-36bd-4115-b7f6-688e0af87746" Name="H:\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="H:\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="13dbcdbb-c36d-4f29-907b-6631b4d6431a" Name="%WINDIR%\Tasks\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%WINDIR%\Tasks\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="1c479dc2-af2f-4902-a2b7-f1c97f421a2f" Name="%WINDIR%\PLA\Reports\en-US\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%WINDIR%\PLA\Reports\en-US\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="2487bbec-24b3-4b87-ab20-5a359a7b7edd" Name="%WINDIR%\Temp\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%WINDIR%\Temp\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="33d0a179-d772-47c9-9915-c34d41e95840" Name="%WINDIR%\PLA\Rules\en-US\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%WINDIR%\PLA\Rules\en-US\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="4338d889-627e-4ccc-a187-bdac5af698a9" Name="%WINDIR%\tracing\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%WINDIR%\tracing\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="4a95c756-421a-498e-a2a5-3dec09859ed7" Name="%SYSTEM32%\FxsTmp\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%SYSTEM32%\FxsTmp\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="513dca93-da83-4077-addd-1ce0ff9c475b" Name="%WINDIR%\Registration\CRMLog\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%WINDIR%\Registration\CRMLog\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="5ea03940-3d7d-487b-87f9-50a9ef2e6cee" Name="%WINDIR%\PLA\Rules\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%WINDIR%\PLA\Rules\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="7307faa8-a365-4f9c-b40d-a73f3ee26d9f" Name="%SYSTEM32%\Tasks\Microsoft\Windows\RemoteApp and Desktop Connections Update\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%SYSTEM32%\Tasks\Microsoft\Windows\RemoteApp and Desktop Connections Update\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="8d3c246e-dcde-49dc-8135-e45729a1a41f" Name="%SYSTEM32%\Com\dmp\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%SYSTEM32%\Com\dmp\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="8fd7eb00-f937-4cb3-98ba-b88f8ee9f707" Name="%WINDIR%\PLA\Reports\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%WINDIR%\PLA\Reports\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="a50c2d0e-dac8-4dcb-bc72-8998375d7532" Name="%SYSTEM32%\spool\PRINTERS\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%SYSTEM32%\spool\PRINTERS\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="b571f0fe-9fa6-4f0e-b2ac-68e6101a7df5" Name="G:\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="G:\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="cbd9cc00-170c-49fc-a45b-748c5f972c5e" Name="%WINDIR%\PLA\Templates\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%WINDIR%\PLA\Templates\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="d918b4c1-b01d-4a9c-b6b2-e8d346f66b1a" Name="%SYSTEM32%\LogFiles\WMI\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%SYSTEM32%\LogFiles\WMI\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="f2c8e8c2-e566-4d72-acaa-d55dbf26bce8" Name="%SYSTEM32%\Microsoft\Crypto\RSA\MachineKeys\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%SYSTEM32%\Microsoft\Crypto\RSA\MachineKeys\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="f5c02a76-940e-42c9-9d02-b2da274735ff" Name="%SYSTEM32%\spool\SERVERS\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%SYSTEM32%\spool\SERVERS\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="f63cfa30-49ee-46a1-bf4f-95c7fb1e26e4" Name="%SYSTEM32%\Tasks\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%SYSTEM32%\Tasks\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="f773463a-dbe9-4f58-8f15-b7dac4e14fbc" Name="%SYSTEM32%\Tasks\Microsoft\Windows\PLA\System\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%SYSTEM32%\Tasks\Microsoft\Windows\PLA\System\*" />
+      </Conditions>
+    </FilePathRule>
+  </RuleCollection>
+  <RuleCollection Type="Script" EnforcementMode="NotConfigured">
+    <FilePathRule Id="01d451f4-1178-4d33-ad98-c59698ee4e1d" Name="%WINDIR%\Registration\CRMLog\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%WINDIR%\Registration\CRMLog\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="11e48549-c75b-43a4-9275-4d4697c4afa8" Name="%SYSTEM32%\LogFiles\WMI\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%SYSTEM32%\LogFiles\WMI\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="162e1e23-a120-4336-a7ea-5e6b749ce648" Name="%WINDIR%\Temp\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%WINDIR%\Temp\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="1bcb2e96-defb-49c2-9d27-c5577212b087" Name="%WINDIR%\PLA\Rules\en-US\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%WINDIR%\PLA\Rules\en-US\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="27991724-f42d-4482-815a-965ddcc32dfd" Name="%SYSTEM32%\spool\PRINTERS\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%SYSTEM32%\spool\PRINTERS\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="314c1832-1de1-435a-ae39-61973b79d4a9" Name="%WINDIR%\tracing\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%WINDIR%\tracing\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="371e849a-ebcd-4e6f-a1a8-cd95fcb258b5" Name="%SYSTEM32%\Microsoft\Crypto\RSA\MachineKeys\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%SYSTEM32%\Microsoft\Crypto\RSA\MachineKeys\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="566503b0-6ceb-423a-8cf5-bcedf3d6b782" Name="%WINDIR%\PLA\Reports\en-US\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%WINDIR%\PLA\Reports\en-US\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="6d991336-34c0-49ca-964c-9ace4f686e79" Name="%WINDIR%\Tasks\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%WINDIR%\Tasks\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="712e6da9-7c0e-4c8e-b375-79ac6128ab77" Name="%WINDIR%\PLA\Templates\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%WINDIR%\PLA\Templates\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="801870ba-4c05-40d3-92c4-f4513bfcaf64" Name="H:\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="H:\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="87a0788b-e8a9-4c99-945f-ee72b570e14f" Name="%SYSTEM32%\Tasks\Microsoft\Windows\RemoteApp and Desktop Connections Update\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%SYSTEM32%\Tasks\Microsoft\Windows\RemoteApp and Desktop Connections Update\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="accd1a1b-49f2-430f-8571-35f8e28f114f" Name="%SYSTEM32%\Tasks\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%SYSTEM32%\Tasks\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="b29d7e02-d02a-448b-a30c-8601acaef3bc" Name="%SYSTEM32%\FxsTmp\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%SYSTEM32%\FxsTmp\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="bfb02de9-ed21-4208-85a3-a136f5cca02f" Name="%SYSTEM32%\spool\SERVERS\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%SYSTEM32%\spool\SERVERS\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="cb939986-7ace-4fb7-9677-25513157d767" Name="%SYSTEM32%\Tasks\Microsoft\Windows\PLA\System\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%SYSTEM32%\Tasks\Microsoft\Windows\PLA\System\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="cc93de17-81d2-44c1-9e53-8d296df92a4c" Name="%SYSTEM32%\spool\drivers\color\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%SYSTEM32%\spool\drivers\color\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="d633c5a0-dba9-41eb-812d-ac41d54a94e7" Name="%SYSTEM32%\Com\dmp\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%SYSTEM32%\Com\dmp\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="ecf9be1c-bb86-4c4c-8016-d25ac01f9800" Name="%WINDIR%\PLA\Reports\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%WINDIR%\PLA\Reports\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="f176e424-ffb9-494c-941d-ef043da638ad" Name="%WINDIR%\PLA\Rules\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%WINDIR%\PLA\Rules\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="fcb34461-5692-4a70-95c3-8767a4595e94" Name="%SYSTEM32%\Tasks\Microsoft\Windows\PLA\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%SYSTEM32%\Tasks\Microsoft\Windows\PLA\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="fdf23780-1c1b-4772-b634-b16d91acff18" Name="%OSDRIVE%\ProgramData\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="%OSDRIVE%\ProgramData\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="fe7495dc-5b07-49fe-94cf-c74d88c270b5" Name="G:\*" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="G:\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="ca125e8d-45fe-401f-ac47-792f3b1c7da3" Name="%SYSTEM32%\WindowsPowerShell\v1.0\Modules\*" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="%SYSTEM32%\WindowsPowerShell\v1.0\Modules\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="b3c4071a-c151-4fd5-91d6-eb2136fcd12b" Name="%PROGRAMFILES%\WindowsPowerShell\Modules\PSREADLINE\1.1\*" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="%PROGRAMFILES%\WindowsPowerShell\Modules\PSREADLINE\1.1\*" />
+      </Conditions>
+    </FilePathRule>
+  </RuleCollection>
+</AppLockerPolicy>
