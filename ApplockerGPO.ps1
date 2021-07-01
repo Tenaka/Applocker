@@ -213,33 +213,16 @@ $cnPath = (Get-GPO -Name $GPOPath).path
 $dom=(Get-ADDomainController).hostname
 
 Set-AppLockerPolicy -XmlPolicy $xmlExe -Merge -Ldap "LDAP://$dom/$cn"
-sleep 5
 Set-AppLockerPolicy -XmlPolicy $xmlScript -Merge -Ldap "LDAP://$dom/$cn"
-sleep 5
 Set-AppLockerPolicy -XmlPolicy $xmlMSI -Merge -Ldap "LDAP://$dom/$cn"
-sleep 5
 Set-AppLockerPolicy -XmlPolicy $xmlPath -Merge -Ldap "LDAP://$dom/$cnPath"
-sleep 5
 Set-AppLockerPolicy -XmlPolicy $xmlPack -Merge -Ldap "LDAP://$dom/$cn"
-sleep 5
 
 Set-AppLockerPolicy -XmlPolicy $xmldnyWin32 -Merge -Ldap "LDAP://$dom/$cn"
-sleep 5
 Set-AppLockerPolicy -XmlPolicy $xmldnyWin64 -Merge -Ldap "LDAP://$dom/$cn"
-sleep 5
 Set-AppLockerPolicy -XmlPolicy $xmldnyWinSxs -Merge -Ldap "LDAP://$dom/$cn"
-sleep 5
 Set-AppLockerPolicy -XmlPolicy $xmldnyProg64 -Merge -Ldap "LDAP://$dom/$cn"
-sleep 5
 Set-AppLockerPolicy -XmlPolicy $xmldnyProg32 -Merge -Ldap "LDAP://$dom/$cn"
-sleep 5
 Set-AppLockerPolicy -XmlPolicy $xmldnyPS -merge -Ldap "LDAP://$dom/$cnAdmin"
-sleep 5
-
-
-
-
-
-
 
 
