@@ -9,7 +9,7 @@ $path = "c:\logs\Applocker"
 $xmlExe = "$path\Exe.xml"
 $xmlScript = "$path\Script.xml"
 $xmlMSI = "$path\Msi.xml"
-$xmlPack = "$path\PackagedRules.xml"
+$xmlPack = "$path\Appx.xml"
 $xmlPath = "$path\PathRules.xml"
 $xmldnyWin32 = "$path\dnyWin32.xml"
 $xmldnyWin64 = "$path\dnyWin64.xml"
@@ -67,13 +67,18 @@ Get-AppLockerFileInformation -ErrorAction SilentlyContinue |
 New-AppLockerPolicy -RuleType Publisher,Hash -Optimize -Xml |
 Out-File $xmlMsi
 
+#Create policy for All Users and Packages (Appx)
+Get-AppxPackage -allusers | 
+Get-AppLockerFileInformation | 
+New-AppLockerPolicy -RuleType publisher -Optimize -xml -User Users |
+Out-File $xmlAppX 
+
 $ardnyWin32=@()
 foreach ($dnyWin32 in $dny)
     {
     $dnyWin32FileInf = Get-ChildItem -Path C:\Windows\system32 -Recurse -Force -ErrorAction SilentlyContinue | 
     Where {$_.name -eq "$dnyWin32"} 
     $dnyWin32Fullname = $dnyWin32FileInf.FullName
-    $dnyWin32Fullname 
     $ardnyWin32 += $dnyWin32Fullname
     }
 sleep 5
