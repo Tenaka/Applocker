@@ -166,6 +166,14 @@ $gcXmlScript = get-content $xmlScript
 $gcXmlScript.Replace("NotConfigured","Enabled") | 
 Out-File $xmlScript
 
+$gcPack = get-content $xmlPack
+$gcPack.Replace("NotConfigured","Enabled") | 
+Out-File $xmlPack
+
+$gcPath = get-content $xmlPath
+$gcPath.Replace("NotConfigured","Enabled") | 
+Out-File $xmlPath
+
 $gcdnyWin32 = get-content $xmldnyWin32
 $gcdnyWin32.Replace("Allow","Deny").Replace("NotConfigured","Enabled") | 
 Out-File $xmldnyWin32
@@ -185,14 +193,6 @@ Out-File $xmldnyProg64
 $gcdnyProg32 = get-content $xmldnyProg32
 $gcdnyProg32.Replace("Allow","Deny").Replace("NotConfigured","Enabled") | 
 Out-File $xmldnyProg32
-
-$ccPack = get-content $xmlPack
-$ccPack.Replace("NotConfigured","Enabled") | 
-Out-File $xmlPack
-
-$ccPath = get-content $xmlPath
-$ccPath.Replace("NotConfigured","Enabled") | 
-Out-File $xmlPath
 
 $gcdnyPS = get-content $xmldnyPS
 $gcdnyPS.Replace("Allow","Deny").Replace("NotConfigured","Enabled") | 
