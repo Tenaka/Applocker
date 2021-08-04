@@ -18,21 +18,51 @@ $xmldnyProg64 = "$path\dnyProg64.xml"
 $xmldnyWinSxs = "$path\dnyWinSxs.xml"
 $xmldnyPS = "$path\dnyPS.xml"
 
-#Block the following files
-$dny = 
-"csc.Exe",
-"gathernetworkInf.vbs",
-"installutil.Exe",
-"msbuild.Exe",
-"msdeploy.Exe",
-"mshta.Exe",
-"Package.dll",
+#The following list of files are commonly abused to bypass Applocker or attack the system.
+$dny = "gathernetworkInf.vbs", 
+"installutil.Exe", #Applocker Bypass
 "scrobj.dll",
 "sos.dll",
-"psr.Exe",
-"ftp.Exe",
-"cipher.Exe",
-"IEExec.Exe"
+"cipher.Exe", #Used by malware to encrypt disks (WannaCry)
+"certutil.exe",  #Used to download files and encode text to programs 
+<#Microsoft recommended files to block
+https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-block-rules
+#>
+"addinprocess.exe",
+"addinprocess32.exe",
+"addinutil.exe",
+"aspnet_compiler.exe",
+"bash.exe",
+"bginfo.exe"
+"cdb.exe",
+"csi.exe",
+"dbghost.exe",
+"dbgsvc.exe",
+"dnx.exe",
+"dotnet.exe",
+"fsi.exe",
+"fsiAnyCpu.exe",
+"infdefaultinstall.exe",
+"kd.exe",
+"kill.exe",
+"lxssmanager.dll",
+"lxrun.exe",
+"Microsoft.Build.dll",
+"Microsoft.Build.Framework.dll",
+"Microsoft.Workflow.Compiler.exe",
+"msbuild.exe",
+"msbuild.dll",
+"mshta.exe",
+"ntkd.exe",
+"ntsd.exe",
+"powershellcustomhost.exe",
+"rcsi.exe",
+"runscripthelper.exe",
+"texttransform.exe",
+"visualuiaverifynative.exe",
+"wfc.exe",
+"windbg.exe",
+"wmic.exe"
 
 $dnyPSExe =
 'Powershell.exe',
