@@ -2,7 +2,7 @@
 
 Full details of the script and how it works can be found at https://www.tenaka.net/applockergpo
 
-Applocker is available with Windows 7 Ultimate and Enterprise, Windows 8 and 10 Pro Editions and is a application whitelisting service that is meant to keep the system safe from malware executing. It does this via GPO and Publisher, Hash and Path rules for the following file types:
+Applocker is available with Windows 7 Ultimate and Enterprise, Windows 8 and 10 Enterprise edition and is a application whitelisting service that is meant to keep the system safe from malware executing. It does this via GPO and Publisher, Hash and Path rules for the following file types:
 
 Executables (.exe, .com)
 Dll's (.ocx, . dll)
