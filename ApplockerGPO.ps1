@@ -72,7 +72,7 @@ $dnyPSExe =
 #Create policy for all Exe's
 Get-ChildItem C:\ -Force -Recurse -ErrorAction SilentlyContinue | 
 where {$_.Extension -eq ".exe"} | 
-ForEach-Object {$_.FullName   } | 
+ForEach-Object {$_.FullName} | 
 Get-AppLockerFileInformation -ErrorAction SilentlyContinue | 
 New-AppLockerPolicy -RuleType Publisher,Hash -Optimize -Xml |
 Out-File $xmlExe
@@ -91,7 +91,8 @@ Out-File $xmlScript
 
 #Create policy for all Scripts
 Get-ChildItem C:\ -Force -Recurse -ErrorAction SilentlyContinue | 
-where {$_.Extension -eq ".msi" -or $_.Extension -eq ".msp*"} | 
+where {$_.Extension -eq ".msi" `
+-or $_.Extension -eq ".msp*"} | 
 ForEach-Object {$_.FullName} | 
 Get-AppLockerFileInformation -ErrorAction SilentlyContinue | 
 New-AppLockerPolicy -RuleType Publisher,Hash -Optimize -Xml |
@@ -106,7 +107,7 @@ Out-File $xmlAppX
 $ardnyWin32=@()
 foreach ($dnyWin32 in $dny)
     {
-    $dnyWin32FileInf = Get-ChildItem -Path C:\Windows\system32 -Recurse -Force -ErrorAction SilentlyContinue | 
+    $dnyWin32FileInf = Get-ChildItem -Path C:\Windows\system32\ -Recurse -Force -ErrorAction SilentlyContinue | 
     Where {$_.name -eq "$dnyWin32"} 
     $dnyWin32Fullname = $dnyWin32FileInf.FullName
     $ardnyWin32 += $dnyWin32Fullname
@@ -120,7 +121,7 @@ Out-File $xmldnyWin32
 $ardnyWin64=@()
 foreach ($dnyWin64 in $dny)
     {
-    $dnyWin64FileInf = Get-ChildItem -Path C:\Windows\sysWOW64 -Recurse -Force -ErrorAction SilentlyContinue | 
+    $dnyWin64FileInf = Get-ChildItem -Path C:\Windows\sysWOW64\ -Recurse -Force -ErrorAction SilentlyContinue | 
     Where {$_.name -eq "$dnyWin64"}
     $dnyWin64Fullname = $dnyWin64FileInf.FullName
     $ardnyWin64 += $dnyWin64Fullname
@@ -159,7 +160,7 @@ Out-File $xmldnyProg32
 $ardnyWinSxs=@()
 foreach ($dnyWinSxs in $dny)
     {
-    $dnyWinSxsFileInf = Get-ChildItem -Path C:\Windows\winSxs -Recurse -Force -ErrorAction SilentlyContinue | 
+    $dnyWinSxsFileInf = Get-ChildItem -Path C:\Windows\winSxs\ -Recurse -Force -ErrorAction SilentlyContinue | 
     Where {$_.name -eq "$dnyWinSxs"}
     $dnyWinSxsFullname = $dnyWinSxsFileInf.FullName
     $ardnyWinSxs += $dnyWinSxsFullname
