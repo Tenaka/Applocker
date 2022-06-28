@@ -24,7 +24,7 @@ $dny = "gathernetworkInf.vbs", 
 "installutil.Exe", #Applocker Bypass
 "scrobj.dll",
 "sos.dll",
-"cipher.Exe", #Used by malware to encrypt disks (WannaCry)
+"cipher.Exe", 
 "certutil.exe",  #Used to download files and encode text to programs 
 <#Microsoft recommended files to block
 https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-block-rules
