@@ -3,7 +3,8 @@
 
 $GPOName = Read-Host "Name of the Applocker GPO....."
 
-$path = "c:\logs\Applocker"
+$path = "c:\downloads\Applocker"
+New-Item -Path $path -ItemType Directory -Force
 
 #Output files
 $xmlExe = "$path\Exe.xml"
