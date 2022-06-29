@@ -24,7 +24,7 @@ $xmldnyPS = "$path\dnyPS.xml"
 
 #Block the following files
 $dny = 
-"gathernetworkInf.vbs", #system info gather
+"gathernetworkInfo.vbs", #system info gather
 "installutil.Exe", #Applocker bypass
 "scrobj.dll",
 "sos.dll",
