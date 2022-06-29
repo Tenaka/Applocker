@@ -1,10 +1,10 @@
 
 #Working Folder on local client
 
-#$GPOName = Read-Host "Name of the Applocker GPO....."
+$GPOName = Read-Host "Name of the Applocker GPO....."
 
-$GPOName = "DenyTheWorld"
-$path = "c:\downloads\Applocker"
+#$GPOName = "DenyTheWorld"
+$path = "C:\Downloads\Applocker"
 
 New-Item -Path $path -ItemType Directory -Force
 
@@ -12,7 +12,7 @@ New-Item -Path $path -ItemType Directory -Force
 $xmlExe = "$path\Exe.xml"
 $xmlScript = "$path\Script.xml"
 $xmlMSI = "$path\Msi.xml"
-$xmlPack = "$path\PackagedRules.xml"
+$xmlAppX  = "$path\AppXRules.xml"
 $xmlPath = "$path\PathRules.xml"
 $xmldnyWin = "$path\dnyWin.xml"
 $xmldnyWin32 = "$path\dnyWin32.xml"
@@ -103,6 +103,12 @@ ForEach-Object {$_.FullName} |
 Get-AppLockerFileInformation -ErrorAction SilentlyContinue | 
 New-AppLockerPolicy -RuleType Publisher,Hash -Optimize -Xml |
 Out-File $xmlMsi
+
+#Create policy for All Users and Packages (Appx)
+Get-AppxPackage -allusers | 
+Get-AppLockerFileInformation | 
+New-AppLockerPolicy -RuleType publisher -Optimize -xml -User Users |
+Out-File $xmlAppX 
 
 $ardnyWin=@()
 foreach ($dnyWin in $dny)
@@ -237,9 +243,9 @@ $gcdnyProg32 = get-content $xmldnyProg32
 $gcdnyProg32.Replace("Allow","Deny").Replace("NotConfigured","Enabled") | 
 Out-File $xmldnyProg32
 
-$ccPack = get-content $xmlPack
+$ccPack = get-content $xmlAppX
 $ccPack.Replace("NotConfigured","Enabled") | 
-Out-File $xmlPack
+Out-File $xmlAppX
 
 $ccPath = get-content $xmlPath
 $ccPath.Replace("NotConfigured","Enabled") | 
@@ -263,30 +269,30 @@ $cnPath = (Get-GPO -Name $GPOPath).path
 
 $dom=(Get-ADDomainController).hostname
 
-Set-AppLockerPolicy -XmlPolicy $xmlExe -Merge -Ldap "LDAP://$dom/$cn"
+Set-AppLockerPolicy -XmlPolicy $xmlExe -Ldap "LDAP://$dom/$cn" #Removes current GPO settings, assists with successful import
 sleep 15
-Set-AppLockerPolicy -XmlPolicy $xmlScript -Merge -Ldap "LDAP://$dom/$cn"
+Set-AppLockerPolicy -XmlPolicy $xmlScript -Ldap "LDAP://$dom/$cn" -Merge 
 sleep 15
-Set-AppLockerPolicy -XmlPolicy $xmlMSI -Merge -Ldap "LDAP://$dom/$cn"
+Set-AppLockerPolicy -XmlPolicy $xmlMSI -Ldap "LDAP://$dom/$cn" -Merge 
 sleep 15
-Set-AppLockerPolicy -XmlPolicy $xmlPath -Merge -Ldap "LDAP://$dom/$cnPath"
+Set-AppLockerPolicy -XmlPolicy $xmlPath -Ldap "LDAP://$dom/$cnPath"
 sleep 15
-Set-AppLockerPolicy -XmlPolicy $xmlPack -Merge -Ldap "LDAP://$dom/$cn"
+Set-AppLockerPolicy -XmlPolicy $xmlAppX -Ldap "LDAP://$dom/$cn" -Merge 
 sleep 15
 
-Set-AppLockerPolicy -XmlPolicy $xmldnyWin -Merge -Ldap "LDAP://$dom/$cn"
+Set-AppLockerPolicy -XmlPolicy $xmldnyWin -Ldap "LDAP://$dom/$cn" -Merge 
 sleep 15
-Set-AppLockerPolicy -XmlPolicy $xmldnyWin32 -Merge -Ldap "LDAP://$dom/$cn"
+Set-AppLockerPolicy -XmlPolicy $xmldnyWin32 -Ldap "LDAP://$dom/$cn" -Merge 
 sleep 15
-Set-AppLockerPolicy -XmlPolicy $xmldnyWin64 -Merge -Ldap "LDAP://$dom/$cn"
+Set-AppLockerPolicy -XmlPolicy $xmldnyWin64 -Ldap "LDAP://$dom/$cn" -Merge 
 sleep 15
-Set-AppLockerPolicy -XmlPolicy $xmldnyWinSxs -Merge -Ldap "LDAP://$dom/$cn"
+Set-AppLockerPolicy -XmlPolicy $xmldnyWinSxs -Ldap "LDAP://$dom/$cn" -Merge 
 sleep 15
-Set-AppLockerPolicy -XmlPolicy $xmldnyProg64 -Merge -Ldap "LDAP://$dom/$cn"
+Set-AppLockerPolicy -XmlPolicy $xmldnyProg64 -Ldap "LDAP://$dom/$cn" -Merge 
 sleep 15
-Set-AppLockerPolicy -XmlPolicy $xmldnyProg32 -Merge -Ldap "LDAP://$dom/$cn"
+Set-AppLockerPolicy -XmlPolicy $xmldnyProg32 -Ldap "LDAP://$dom/$cn" -Merge 
 sleep 15
-Set-AppLockerPolicy -XmlPolicy $xmldnyPS -merge -Ldap "LDAP://$dom/$cnAdmin"
+Set-AppLockerPolicy -XmlPolicy $xmldnyPS -Ldap "LDAP://$dom/$cnAdmin"
 sleep 15
 
 
