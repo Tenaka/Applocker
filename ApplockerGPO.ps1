@@ -1,10 +1,10 @@
 
 #Working Folder on local client
 
-$GPOName = Read-Host "Name of the Applocker GPO....."
+#$GPOName = Read-Host "Name of the Applocker GPO....."
 
-#$GPOName = "DenyTheWorld"
-$path = "C:\Downloads\Applocker"
+$GPOName = "DenyTheWorld"
+$path = "c:\downloads\Applocker"
 
 New-Item -Path $path -ItemType Directory -Force
 
@@ -27,12 +27,20 @@ $dny =
 "gathernetworkInfo.vbs", #system info gather
 "installutil.Exe", #Applocker bypass
 "scrobj.dll",
+"atbroker.exe",
 "sos.dll",
 "cipher.Exe", #Used by malware to permanently delete or encrypt files 
 "certutil.exe",  #Used by hackers to download files and encode text, base64
 "csc.exe",    #Used in conjunction with InstallUtil.exe to csharp to exe a file
 "cmd.exe",  #Creates data streams
 "ExtExport.exe",  #Loads and executes dll's from other folders and used as part of Astaroth malware
+"cmstp.exe",
+"xwizard.exe",
+"odbcconf.exe",
+"te.exe",
+"mavinject32.exe",
+"msdt.exe",  #Follina
+
 #MS Recommended
 "addinprocess.exe",
 "addinprocess32.exe",
@@ -68,8 +76,7 @@ $dny =
 "visualuiaverifynative.exe",
 "wfc.exe",
 "windbg.exe",
-"wmic.exe",
-"msdt.exe" 
+"wmic.exe" 
 
 $dnyPSExe =
 'Powershell.exe',
