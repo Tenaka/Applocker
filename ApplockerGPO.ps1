@@ -38,6 +38,7 @@ $dny =
 "xwizard.exe",
 "odbcconf.exe",
 "te.exe",
+"fodhelper.exe",   #Used in UAC bypass, used to manage optional language features.
 "mavinject32.exe",
 "msdt.exe",  #Follina
 
