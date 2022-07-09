@@ -129,7 +129,7 @@ Out-File $xmlAppX
 $ardnyWin=@()
 foreach ($dnyWin in $dny)
     {
-    $dnyWinFileInf0 = Get-ChildItem -Path C:\Windows\ -Recurse -Force -ErrorAction SilentlyContinue | 
+    $dnyWinFileInf = Get-ChildItem -Path C:\Windows\ -Recurse -Force -ErrorAction SilentlyContinue | 
     Where {$_.fullName -notmatch "sysWOW64" -and $_.fullName -notmatch "system32" -and $_.fullName -notmatch "winsxs" -and $_.fullName -notmatch "LCU" -or $_.name -eq $dnyWin} 
     
     $dnyWinFullname = $dnyWinFileInf.FullName
