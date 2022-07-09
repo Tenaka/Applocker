@@ -23,6 +23,7 @@ $xmlMSI = "$path\Msi.xml"
 $xmlAppX  = "$path\AppXRules.xml"
 $xmlPath = "$path\PathRules.xml"
 $xmldnyWin = "$path\dnyWin.xml"
+$xmldnyWinNet = "$path\dnyWinNet.xml"
 $xmldnyWin32 = "$path\dnyWin32.xml"
 $xmldnyWin64 = "$path\dnyWin64.xml"
 $xmldnyProg32 = "$path\dnyProg32.xml"
@@ -126,19 +127,60 @@ Get-AppLockerFileInformation |
 New-AppLockerPolicy -RuleType publisher -Optimize -xml -User Users |
 Out-File $xmlAppX 
 
+#To save scanning the entire C:\Windows, named directories are scanned based on the list of denied files
+#Dont add WinSXS, System32 or SysWow64
+
+<#
+#Query takes the deny files and finds all directories the files are located in.
+#The directories are then added to $dynWinNetPaths variable
+#
+$ardnyWin=@()
+$dnyWinFileInf=@()
+foreach ($dnyWin in $dny)
+    {
+   $dnyWinFileInf = Get-ChildItem -Path C:\Windows\ -Recurse -Force -ErrorAction SilentlyContinue | 
+   Where {$_.fullName -notmatch "sysWOW64" `
+   -and $_.fullName -notmatch "system32" `
+   -and $_.fullName -notmatch "winsxs" `
+   -and $_.fullName -notmatch "prefetch" `
+   -and $_.fullName -notmatch "LCU" `
+   -and $_.name -match $dnyWin } 
+  
+    $dnyWinFileFullname = $dnyWinFileInf.fullname
+    $dnyWinFileFullname
+    $ardnyWin += $dnyWinFileFullname
+}
+
+#>
+
+$dynWinNetPaths = "C:\Windows\Microsoft.NET\"
+$ardnyWinNet=@()
+foreach ($dynWinNetItem in $dynWinNetPaths)
+{ 
+    foreach ($dnyWin in $dny)
+        {
+        $dnyWinNetFileInf = Get-ChildItem -Path $dynWinNetItem -Recurse -Force -ErrorAction SilentlyContinue | 
+        Where {$_.name -eq $dnyWin} 
+        $dnyWinNetFullname = $dnyWinNetFileInf.FullName
+        $dnyWinNetFullname 
+        $ardnyWinNet += $dnyWinNetFullname
+        }
+    sleep 5
+    ForEach-Object {$ardnyWinNet} |
+    Get-AppLockerFileInformation -ErrorAction SilentlyContinue | 
+    New-AppLockerPolicy -RuleType Hash -Xml | 
+    Out-File $xmldnyWinNet
+}
+
+#Windows root folder only
 $ardnyWin=@()
 foreach ($dnyWin in $dny)
     {
-     $dnyWinFileInf = Get-ChildItem -Path C:\Windows\ -Recurse -Force -ErrorAction SilentlyContinue | 
-     Where {$_.fullName -notmatch "sysWOW64" `
-     -and $_.fullName -notmatch "system32" `
-     -and $_.fullName -notmatch "winsxs" `
-     -and $_.fullName -notmatch "prefetch" `
-     -and $_.fullName -notmatch "LCU" `
-     -and $_.name -match $dnyWin `
-     -and $_.name -notmatch ".config"} 
-     $dnypathFileFull = $dnypathFile.fullname
-     $arrdnypathWin += $dnypathFileFull
+    $dnyWinFileInf = Get-ChildItem -Path C:\Windows\ -Force -ErrorAction SilentlyContinue | 
+    Where {$_.name -eq $dnyWin} 
+    $dnyWinFullname = $dnyWinFileInf.FullName
+    $dnyWinFullname 
+    $ardnyWin += $dnyWinFullname
     }
 sleep 5
 ForEach-Object {$ardnyWin} |
@@ -240,6 +282,10 @@ $gcXmlScript = get-content $xmlScript
 $gcXmlScript.Replace("NotConfigured","Enabled") | 
 Out-File $xmlScript
 
+$gcdnyWinNet = get-content $xmldnyWinNet
+$gcdnyWinNet.Replace("Allow","Deny").Replace("NotConfigured","Enabled") | 
+Out-File $xmldnyWinNet
+
 $gcdnyWin = get-content $xmldnyWin
 $gcdnyWin.Replace("Allow","Deny").Replace("NotConfigured","Enabled") | 
 Out-File $xmldnyWin
@@ -299,8 +345,10 @@ sleep 15
 Set-AppLockerPolicy -XmlPolicy $xmlPath -Ldap "LDAP://$dom/$cnPath"
 sleep 15
 Set-AppLockerPolicy -XmlPolicy $xmlAppX -Ldap "LDAP://$dom/$cn" -Merge 
-sleep 15
+sleep 150
 
+Set-AppLockerPolicy -XmlPolicy $xmldnyWinNet -Ldap "LDAP://$dom/$cn" -Merge 
+sleep 15
 Set-AppLockerPolicy -XmlPolicy $xmldnyWin -Ldap "LDAP://$dom/$cn" -Merge 
 sleep 15
 Set-AppLockerPolicy -XmlPolicy $xmldnyWin32 -Ldap "LDAP://$dom/$cn" -Merge 
