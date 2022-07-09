@@ -3,6 +3,14 @@
 
 #$GPOName = Read-Host "Name of the Applocker GPO....."
 
+<#
+    Auto Elevate files - Files of Interest that should be considered for deny list
+    https://gist.github.com/TheWover/b5a340b1cac68156306866ff24e5934c
+    Get-ChildItem "C:\Windows\System32\*.exe" | Select-String -pattern "<autoElevate>true</autoElevate>"
+    Get-ChildItem "C:\Windows\Syswow64\*.exe" | Select-String -pattern "<autoElevate>true</autoElevate>"
+
+#>
+
 $GPOName = "DenyTheWorld"
 $path = "c:\downloads\Applocker"
 
@@ -80,9 +88,9 @@ $dny =
 "wmic.exe" 
 
 $dnyPSExe =
-'Powershell.exe',
-'Powershell_ise.exe',
-'system.management.automation.dll'
+"Powershell.exe",
+"Powershell_ise.exe",
+"system.management.automation.dll"
 
 #Create policy for all Exe's
 Get-ChildItem C:\ -Force -Recurse -ErrorAction SilentlyContinue | 
@@ -121,8 +129,9 @@ Out-File $xmlAppX
 $ardnyWin=@()
 foreach ($dnyWin in $dny)
     {
-    $dnyWinFileInf = Get-ChildItem -Path C:\Windows\ -Recurse -Force -ErrorAction SilentlyContinue | 
-    Where {$_.DirectoryName -notlike "*sysWOW64*" -and $_.DirectoryName -notlike "*system32*" -and $_.DirectoryName -notlike "*winsxs*" -and $_.name -eq "$dnyWin"} 
+    $dnyWinFileInf0 = Get-ChildItem -Path C:\Windows\ -Recurse -Force -ErrorAction SilentlyContinue | 
+    Where {$_.fullName -notmatch "sysWOW64" -and $_.fullName -notmatch "system32" -and $_.fullName -notmatch "winsxs" -and $_.fullName -notmatch "LCU" -and $_.name -eq "$dnyWin"} 
+    
     $dnyWinFullname = $dnyWinFileInf.FullName
     $dnyWinFullname 
     $ardnyWin += $dnyWinFullname
