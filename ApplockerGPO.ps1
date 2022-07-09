@@ -129,12 +129,16 @@ Out-File $xmlAppX
 $ardnyWin=@()
 foreach ($dnyWin in $dny)
     {
-    $dnyWinFileInf = Get-ChildItem -Path C:\Windows\ -Recurse -Force -ErrorAction SilentlyContinue | 
-    Where {$_.fullName -notmatch "sysWOW64" -and $_.fullName -notmatch "system32" -and $_.fullName -notmatch "winsxs" -and $_.fullName -notmatch "LCU" -or $_.name -eq $dnyWin} 
-    
-    $dnyWinFullname = $dnyWinFileInf.FullName
-    $dnyWinFullname 
-    $ardnyWin += $dnyWinFullname
+     $dnyWinFileInf = Get-ChildItem -Path C:\Windows\ -Recurse -Force -ErrorAction SilentlyContinue | 
+     Where {$_.fullName -notmatch "sysWOW64" `
+     -and $_.fullName -notmatch "system32" `
+     -and $_.fullName -notmatch "winsxs" `
+     -and $_.fullName -notmatch "prefetch" `
+     -and $_.fullName -notmatch "LCU" `
+     -and $_.name -match $dnyWin `
+     -and $_.name -notmatch ".config"} 
+     $dnypathFileFull = $dnypathFile.fullname
+     $arrdnypathWin += $dnypathFileFull
     }
 sleep 5
 ForEach-Object {$ardnyWin} |
