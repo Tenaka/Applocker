@@ -365,9 +365,3 @@ Set-AppLockerPolicy -XmlPolicy $xmldnyPS -Ldap "LDAP://$dom/$cnAdmin"
 sleep 15
 
 
-
-
-
-
-
-
