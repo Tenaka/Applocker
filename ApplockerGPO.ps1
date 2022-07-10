@@ -9,6 +9,10 @@
     Get-ChildItem "C:\Windows\System32\*.exe" | Select-String -pattern "<autoElevate>true</autoElevate>"
     Get-ChildItem "C:\Windows\Syswow64\*.exe" | Select-String -pattern "<autoElevate>true</autoElevate>"
 
+    #Support
+    https://www.tenaka.net/applockergpo
+    
+
 #>
 
 $GPOName = "DenyTheWorld"
@@ -152,6 +156,8 @@ foreach ($dnyWin in $dny)
 }
 
 #>
+
+
 
 $dynWinNetPaths = "C:\Windows\Microsoft.NET\"
 $ardnyWinNet=@()
@@ -363,5 +369,11 @@ Set-AppLockerPolicy -XmlPolicy $xmldnyProg32 -Ldap "LDAP://$dom/$cn" -Merge
 sleep 15
 Set-AppLockerPolicy -XmlPolicy $xmldnyPS -Ldap "LDAP://$dom/$cnAdmin"
 sleep 15
+
+
+
+
+
+
 
 
