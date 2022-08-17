@@ -1,22 +1,35 @@
 
-#Working Folder on local client
-
-#$GPOName = Read-Host "Name of the Applocker GPO....."
-
 <#
-    Auto Elevate files - Files of Interest that should be considered for deny list
-    https://gist.github.com/TheWover/b5a340b1cac68156306866ff24e5934c
-    Get-ChildItem "C:\Windows\System32\*.exe" | Select-String -pattern "<autoElevate>true</autoElevate>"
-    Get-ChildItem "C:\Windows\Syswow64\*.exe" | Select-String -pattern "<autoElevate>true</autoElevate>"
+        .DESCRIPTION
+        Creates an Applocker policy with known exploits denied, applies and starts the APPID service. 
+        Applocker operates in the interactive space of the user, does not apply to Service accounts or Systems and does not protect from RCE's if the Firewall is misconfigured.
 
-    #Support
-    https://www.tenaka.net/applockergpo
+        Microsoft recommends combing Applocker with Device Guard. Applocker provides the finess by blocking Living of the Land executables. Device Guard provides the assurance 
+        at the kernel level only approved programs will execute.
+
+        Further information can be found @ https://www.tenaka.net/applockervsremoteexploit
+   
+        #Consideration
+        Auto Elevate files - Files of Interest that should be considered for deny list
+        https://gist.github.com/TheWover/b5a340b1cac68156306866ff24e5934c
+        Get-ChildItem "C:\Windows\System32\*.exe" | Select-String -pattern "<autoElevate>true</autoElevate>"
+        Get-ChildItem "C:\Windows\Syswow64\*.exe" | Select-String -pattern "<autoElevate>true</autoElevate>"
+
+        #Dll that should be reviewed for deny list
+        https://hijacklibs.net/#
+
+        #Read Oddvar excellent site on Applocker
+        https://oddvar.moe/tag/applocker/
+
+        #Microsoft Applocker stuff - caution some contradictions covered here https://www.tenaka.net/applocker-vs-malware
+        https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview
     
-
+        #Support
+        https://www.tenaka.net/applockergpo
 #>
 
 $GPOName = "DenyTheWorld"
-$path = "c:\downloads\Applocker"
+$path = "c:\SecureClient\Applocker"
 
 New-Item -Path $path -ItemType Directory -Force
 
@@ -38,22 +51,23 @@ $xmldnyPS = "$path\dnyPS.xml"
 #Block the following files
 $dny = 
 "gathernetworkInfo.vbs", #system info gather
-"installutil.Exe", #Applocker bypass
+"installutil.Exe",       #Applocker bypass
 "scrobj.dll",
 "atbroker.exe",
 "sos.dll",
-"cipher.Exe", #Used by malware to permanently delete or encrypt files 
-"certutil.exe",  #Used by hackers to download files and encode text, base64
-"csc.exe",    #Used in conjunction with InstallUtil.exe to csharp to exe a file
-"cmd.exe",  #Creates data streams
-"ExtExport.exe",  #Loads and executes dll's from other folders and used as part of Astaroth malware
+"cipher.Exe",            #Used by malware to permanently delete or encrypt files 
+"certutil.exe",          #Used by hackers to download files and encode text, base64
+"csc.exe",               #Used in conjunction with InstallUtil.exe to csharp to exe a file
+"cmd.exe",               #Creates data streams
+"ExtExport.exe",         #Loads and executes dll's from other folders and used as part of Astaroth malware
 "cmstp.exe",
 "xwizard.exe",
 "odbcconf.exe",
 "te.exe",
-"fodhelper.exe",   #Used in UAC bypass, used to manage optional language features.
+"fodhelper.exe",         #Used in UAC bypass, used to manage optional language features.
 "mavinject32.exe",
-"msdt.exe",  #Follina
+"msdt.exe",              #Follina
+"MpCmdRun.exe",          #remote copy
 
 #MS Recommended
 "addinprocess.exe",
@@ -135,6 +149,8 @@ Out-File $xmlAppX
 #Dont add WinSXS, System32 or SysWow64
 
 <#
+#Pre-check standalone process
+
 #Query takes the deny files and finds all directories the files are located in.
 #The directories are then added to $dynWinNetPaths variable
 #
@@ -156,8 +172,6 @@ foreach ($dnyWin in $dny)
 }
 
 #>
-
-
 
 $dynWinNetPaths = "C:\Windows\Microsoft.NET\"
 $ardnyWinNet=@()
@@ -369,11 +383,4 @@ Set-AppLockerPolicy -XmlPolicy $xmldnyProg32 -Ldap "LDAP://$dom/$cn" -Merge
 sleep 15
 Set-AppLockerPolicy -XmlPolicy $xmldnyPS -Ldap "LDAP://$dom/$cnAdmin"
 sleep 15
-
-
-
-
-
-
-
 
