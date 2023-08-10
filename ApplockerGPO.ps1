@@ -68,7 +68,8 @@ $dny =
 "mavinject32.exe",
 "msdt.exe",              #Follina
 "MpCmdRun.exe",          #remote copy
-
+"fsutil.exe",            #Used to bypass Applocker path rules
+"mklink.exe",            #Used to bypass Applocker path rules
 #MS Recommended
 "addinprocess.exe",
 "addinprocess32.exe",
