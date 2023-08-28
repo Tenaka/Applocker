@@ -1,5 +1,18 @@
+
+
 <#.........................................
 
+Audits Applocker Rules and creates HTM output
+The output can then be imported into EXCEL
+as Web Import for review.
+
+CSV is of little use without the ability to 
+create workspaces and not all systems have 
+MS Excel installed.
+
+.........................................#>
+
+<#.........................................
            Applocker Audit
                HTML CSS
 
