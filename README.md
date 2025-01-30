@@ -1,4 +1,4 @@
-# Applocker
+# Applocker Policy
 
 Full details of the script and how it works can be found at https://www.tenaka.net/applockergpo
 
@@ -11,4 +11,6 @@ Windows Installers (.msi, .mst, .msp)
 Packaged App (.appx)
 
 There is an undocumented feature of blocking API's when DLL enforcement is enabled, requiring path rules to allow. Applocker will be configured to protect all files on C:\, enforcing Executables, Dll's and Installers by Publisher and falling back to Hash. The default rules wont be added with the exception of DLL and Packaged App Rules. The default rules are too easy to bypass.
+
+
 
